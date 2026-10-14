@@ -21,8 +21,4 @@ public class Maintenance {
     LocalDate dateDebut;
     LocalDate dateFin;
     String description;
-
-    @ManyToOne
-    @ToString.Exclude
-    Vehicule vehicule;
 }

@@ -5,7 +5,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
-import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,32 +17,16 @@ import java.util.List;
 public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     long idVehicule;
-     String immatriculation;
-     String marque;
-     String modele;
+    long idVehicule;
+    String immatriculation;
+    String marque;
+    String modele;
 
-     @Enumerated(value = EnumType.STRING)
-     CategorieVehicule categorie;
+    @Enumerated(EnumType.STRING)
+    CategorieVehicule categorie;
 
-     BigDecimal tarifJournalier;
+    BigDecimal tarifJournalier;
 
-    @Enumerated(value = EnumType.STRING)
-     StatutVehicule statut;
-
-    @ManyToOne
-    @ToString.Exclude
-    Agence agence;
-
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    List<Maintenance> maintenances;
-
-    @OneToMany(mappedBy = "vehicule")
-    @ToString.Exclude
-    List<Reservation> reservations;
-
-    @ManyToMany
-    @ToString.Exclude
-    List<Equipement> equipements;
+    @Enumerated(EnumType.STRING)
+    StatutVehicule statut;
 }

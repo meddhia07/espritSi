@@ -25,7 +25,8 @@ public class Paiement {
     @Enumerated(EnumType.STRING)
     ModePaiement modePaiement;
 
-    @ManyToOne
+    // Cote proprietaire (cle etrangere contrat_id_contrat)
+    @ManyToOne(fetch = FetchType.LAZY)
     @ToString.Exclude
     Contrat contrat;
 }

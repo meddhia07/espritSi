@@ -23,16 +23,4 @@ public class Reservation {
 
     @Enumerated(EnumType.STRING)
     StatutReservation statut;
-
-    @ManyToOne
-    @ToString.Exclude
-    Vehicule vehicule;
-
-    @ManyToOne
-    @ToString.Exclude
-    Client client;
-
-    @OneToOne(mappedBy = "reservation", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    Contrat contrat;
 }
