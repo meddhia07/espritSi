@@ -1,4 +1,4 @@
-package tn.esprit.nomprenomclasse3.Domain;
+package tn.esprit.nomprenomclasse3.domain;
 
 public enum ModePaiement {
     CARTE, ESPECES, VIREMENT
